@@ -2,7 +2,7 @@
 
 // Defining Angular app model with all other dependent modules
 var app = angular.module('app',['ngRoute',
-	'app.home','app.about', 'app.portfolio']);
+	'app.home','app.about', 'app.portfolio', 'app.contact']);
 
 app.config(function($routeProvider, $locationProvider, $httpProvider) {
 	

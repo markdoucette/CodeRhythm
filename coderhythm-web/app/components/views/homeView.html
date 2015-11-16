@@ -89,3 +89,26 @@
 		</p>
 	</section>
 </article>
+<article class="main_article_blog">
+    <header class="header_form"><h2>Aptana Studio 3 and unit testing</h2></header>
+    <section>
+        <p> When using Aptana Studio 3 IDE for php dev and you need to unit test without having the web interface set up, you can run php file as a program (normally a test php file is used here).
+        </p>
+
+        <p> To set this up:
+        </p>
+        <ol>
+            <li>Enable the external tools item for the perspective. Right click the toolbar-Customize Perspective-Command Groups Availability and select the check box for “external tools”. This will add a
+                new icon to the toolbar
+            </li>
+            <li>click the down arrow to the right of the new external tools icon and select External Tools Configurations.</li>
+            <li>Select ‘Program’ from the list on the left</li>
+            <li>Click the ‘add new’ icon above the list on the left</li>
+            <li>In the settings pane that comes up enter the name of the test program</li>
+            <li>Enter the location of your php bin in the ‘Location:’ field</li>
+            <li>Enter the directory locations of the test file in the ‘Working Directory’ field</li>
+            <li>Finally enter the name of the test file in the ‘Arguments’ text box. (ie testall.php)</li>
+            <li>Rejoice when you can run your unit test. (thanks GW)s</li>
+        </ol>
+    </section>
+</article>

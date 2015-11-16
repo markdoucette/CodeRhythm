@@ -2,7 +2,7 @@
 
 // Defining Angular app model with all other dependent modules
 var mostPopularListingsApp = angular.module('mostPopularListingsApp',['ngRoute',
-	'mostPopularListingsApp.home','mostPopularListingsApp.about','mostPopularListingsApp.login']);
+	'mostPopularListingsApp.home','mostPopularListingsApp.about']);
 
 mostPopularListingsApp.config(function($routeProvider, $locationProvider, $httpProvider) {
 	

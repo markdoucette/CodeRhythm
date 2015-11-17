@@ -5,7 +5,7 @@
 
 angular.module('app.video', ['ngRoute'])
 
-// routes
+// route
     .config(['$routeProvider', function($routeProvider) {
         $routeProvider.when('/video', {
             controller: 'VideoController',
@@ -16,4 +16,4 @@ angular.module('app.video', ['ngRoute'])
 // controller
     .controller('VideoController', ['$scope', function($scope) {
 
-    }])
+    }]);

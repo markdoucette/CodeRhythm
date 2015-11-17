@@ -1,22 +1,15 @@
 'use strict';
 
-// Defining Angular app model with all other dependent modules
+//  Application module
 var app = angular.module('app',['ngRoute',
-	'app.home','app.about', 'app.portfolio', 'app.contact', 'app.video']);
+	'app.home','app.about', 'app.portfolio', 'app.contact', 'app.video', 'app.books']);
 
 app.config(function($routeProvider, $locationProvider, $httpProvider) {
-	
-	// Declaration of the default route if neither of the controllers
-	// is supporting the request path
+
+	// Default route
 	$routeProvider.otherwise({ redirectTo: '/'});
 
 	// Settings for http communications
 	$httpProvider.defaults.useXDomain = true;
 	delete $httpProvider.defaults.headers.common['X-Requested-With'];
-
-	// disabling # in Angular urls
-	// $locationProvider.html5Mode({
-	// 		enabled: true,
-	//      requireBase: false
-	// });
 });

@@ -1,4 +1,6 @@
-// AboutController.js
+/**
+ * About Controller
+ */
 // For distribution, all controllers
 // are concatanated into single app.js file
 // by using Gulp

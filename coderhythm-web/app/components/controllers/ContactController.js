@@ -1,11 +1,13 @@
 /**
  * Contact Controller
+ * @author Mark Doucette
  */
+'use strict';
 
 angular.module('app.contact', ['ngRoute'])
 
 // routes
-    .config(['$routeProvider', function($routeProvider) {
+    .config(['$routeProvider', function ($routeProvider) {
         $routeProvider.when('/contact', {
             controller: 'ContactController',
             templateUrl: 'components/views/contactView.html'
@@ -14,14 +16,6 @@ angular.module('app.contact', ['ngRoute'])
     }])
 
 // controller
-    .controller('ContactController', ['$scope', function($scope) {
-
-        init();
-
-        function init() {
-
-        }
-
-        this.message = "Hello Contact!";
-
+    .controller('ContactController', ['$scope', function ($scope) {
+        this.message = "Inside ContactController"; // Message for unit test
     }]);

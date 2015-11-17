@@ -1,11 +1,13 @@
-// AboutController.js
+/**
+ * About Controller
+ */
 // For distribution, all controllers
 // are concatanated into single app.js file
 // by using Gulp
 
 'use strict';
 
-angular.module('mostPopularListingsApp.about', ['ngRoute'])
+angular.module('app.about', ['ngRoute'])
 
 // Routing configuration for this module
 .config(['$routeProvider',function($routeprovider){

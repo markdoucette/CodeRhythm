@@ -1,91 +1,136 @@
 <article class="main_article_blog">
-	<header class="header_form"><h2>Xampp, set up vhosts in Mac OSX</h2></header>
-	<section>
+    <header class="header_form"><h2>Xampp, set up vhosts in Mac OSX</h2></header>
+    <section>
 
 
-		<p><span class="italic">This article won’t cover the setup and securing of a local installation of XAMPP in Mac OS X</span></p>
+        <p><span class="italic">This article won’t cover the setup and securing of a local installation of XAMPP in Mac OS X</span>
+        </p>
 
-		<p>
-			Using a local development environment such as XAMPP on your Mac is a quick and simple way of taking the confusion out of setting up the common AMP (Apache, MySQL, PHP) stack for web applications.
-			These programs provide a no fuss no muss way of having your local machine become testing server in a matter of minutes.
-			Set up of Xampp Virtual hosts on a mac is a fairly straightforward process that can be invaluable for development and testing of multiple web projects on your local machine. This provides the
-			ability to reference the different projects on your machine via a simplified URL. Rather than the typical http://localhost:8080/path/to/site/index.php, you will be able to just enter the vhost
-			URL: http://someURLYouCreated/index.php. Much simpler!
-		</p>
+        <p>
+            Using a local development environment such as XAMPP on your Mac is a quick and simple way of taking the
+            confusion out of setting up the common AMP (Apache, MySQL, PHP) stack for web applications.
+            These programs provide a no fuss no muss way of having your local machine become testing server in a matter
+            of minutes.
+            Set up of Xampp Virtual hosts on a mac is a fairly straightforward process that can be invaluable for
+            development and testing of multiple web projects on your local machine. This provides the
+            ability to reference the different projects on your machine via a simplified URL. Rather than the typical
+            http://localhost:8080/path/to/site/index.php, you will be able to just enter the vhost
+            URL: http://someURLYouCreated/index.php. Much simpler!
+        </p>
 
-		<p>
-			Now, once you have your XAMPP installed and running correctly there are just a few small steps to have VHosts working on your machine. Each requires editing some configuration files by hand but
-			nothing we can’t handle with TextEdit.app or your favourite terminal editor such as Vim. Also each will need to be edited as the super user using the ‘sudo’ command.
-		</p>
+        <p>
+            Now, once you have your XAMPP installed and running correctly there are just a few small steps to have
+            VHosts working on your machine. Each requires editing some configuration files by hand but
+            nothing we can’t handle with TextEdit.app or your favourite terminal editor such as Vim. Also each will need
+            to be edited as the super user using the ‘sudo’ command.
+        </p>
 
-		<p>
-			First, navigate to your XAMPP install directory. (usually /Applications/XAMPP/). Next, open the httpd.conf file that is located in the ‘etc' subdirectory. This is the Apache HTTPD web server
-			configuration file and where we need to make a couple of changes. If you plan on using your web server on a port other than the default (80) then search for the line that says: ‘Listen’ as in the
-			picture below.
-		</p>
+        <p>
+            First, navigate to your XAMPP install directory. (usually /Applications/XAMPP/). Next, open the httpd.conf
+            file that is located in the ‘etc' subdirectory. This is the Apache HTTPD web server
+            configuration file and where we need to make a couple of changes. If you plan on using your web server on a
+            port other than the default (80) then search for the line that says: ‘Listen’ as in the
+            picture below.
+        </p>
 
-		<p>
-			<img src="images/xampp_listen.png" alt="listen"/>
-		</p>
+        <p>
+            <img src="resources/img/xampp_listen.png" alt="listen"/>
+        </p>
 
-		<p>
-			Here I have set the web server to use a non default port of 8090.
-		</p>
+        <p>
+            Here I have set the web server to use a non default port of 8090.
+        </p>
 
-		<p>
-			Another thing to change in this file will help prevent dreaded 403 errors.. as in permission errors. Search the file until you find the line that says: ‘User’, and change it to read the username
-			of the account that will run the XAMPP instance. Below it is set to my user name for this machine.
-		</p>
-
-
-		<p>
-			<img src="images/xampp_user.png" alt="user"/>
-		</p>
-
-		<p>
-			Now save that file and lets move on to the next step.
-		</p>
-
-		<p>
-			Navigate to the ‘extra’ sub-folder contained under XAMPP/etc/. Here you will edit the file called ‘httpd-vhosts.conf’
-		</p>
-
-		<p>
-			Once you have this file opened you will create an extra virtual host block for every ‘domain’ you wish to use. Each VirtualHost directive is contained between the opening and closing VirtualHost
-			tags as shown in the picture below.
-		</p>
+        <p>
+            Another thing to change in this file will help prevent dreaded 403 errors.. as in permission errors. Search
+            the file until you find the line that says: ‘User’, and change it to read the username
+            of the account that will run the XAMPP instance. Below it is set to my user name for this machine.
+        </p>
 
 
-		<p>
-			<img src="images/xampp_vhosts.png" alt="vhosts"/>
-		</p>
+        <p>
+            <img src="resources/img/xampp_user.png" alt="user"/>
+        </p>
 
-		<p>
-			Here I have set a virtual host for the port we set earlier (8090) by copying one of the default VirtualHost code blocks and simply editing in the new values. Here the most important ones are the
-			DocumentRoot and ServerName. The DocumentRoot will point to the directory where your web application resides and the ServerName is a name you wish to use as a local domain to navigate to this site
-			in your browser.
-		</p>
+        <p>
+            Now save that file and lets move on to the next step.
+        </p>
 
-		<p>
-			Now, save that file and lets complete the setup by editing one small system file.
-		</p>
+        <p>
+            Navigate to the ‘extra’ sub-folder contained under XAMPP/etc/. Here you will edit the file called
+            ‘httpd-vhosts.conf’
+        </p>
 
-		<p>
-			In your editor and using ‘sudo’ open the system file ‘/etc/hosts’. This is a file that allows mapping of domain names to the system locally. You can see that this is where ‘localhost’ gets its
-			mapping set. We will add one line: 127.0.0.1 yourChosenDomain
-		</p>
+        <p>
+            Once you have this file opened you will create an extra virtual host block for every ‘domain’ you wish to
+            use. Each VirtualHost directive is contained between the opening and closing VirtualHost
+            tags as shown in the picture below.
+        </p>
 
-		<p>
-			Add this line using the local domain you decided on and entered into the httpd-vhosts.conf file, then save and close the file.
-		</p>
 
-		<p>
-			Thats it.. we are done. With all files saved, restart your XAMPP Apache server using the XAMPP control app and enter your chosen domain:port (in my example I would enter: http://esimspanish:8090)
-			into your browser and viola, you should now be set up with Virtual Hosts using XAMPP on your Mac.
-		</p>
+        <p>
+            <img src="resources/img/xampp_vhosts.png" alt="vhosts"/>
+        </p>
 
-		<p>
-			To download XAMPP head to www.ApacheFriends.org. Easy and quick development server services at your fingertips.
-		</p>
-	</section>
+        <p>
+            Here I have set a virtual host for the port we set earlier (8090) by copying one of the default VirtualHost
+            code blocks and simply editing in the new values. Here the most important ones are the
+            DocumentRoot and ServerName. The DocumentRoot will point to the directory where your web application resides
+            and the ServerName is a name you wish to use as a local domain to navigate to this site
+            in your browser.
+        </p>
+
+        <p>
+            Now, save that file and lets complete the setup by editing one small system file.
+        </p>
+
+        <p>
+            In your editor and using ‘sudo’ open the system file ‘/etc/hosts’. This is a file that allows mapping of
+            domain names to the system locally. You can see that this is where ‘localhost’ gets its
+            mapping set. We will add one line: 127.0.0.1 yourChosenDomain
+        </p>
+
+        <p>
+            Add this line using the local domain you decided on and entered into the httpd-vhosts.conf file, then save
+            and close the file.
+        </p>
+
+        <p>
+            Thats it.. we are done. With all files saved, restart your XAMPP Apache server using the XAMPP control app
+            and enter your chosen domain:port (in my example I would enter: http://esimspanish:8090)
+            into your browser and viola, you should now be set up with Virtual Hosts using XAMPP on your Mac.
+        </p>
+
+        <p>
+            To download XAMPP head to www.ApacheFriends.org. Easy and quick development server services at your
+            fingertips.
+        </p>
+    </section>
+</article>
+<article class="main_article_blog">
+    <header class="header_form"><h2>Aptana Studio 3 and unit testing</h2></header>
+    <section>
+        <p> When using Aptana Studio 3 IDE for php dev and you need to unit test without having the web interface set
+            up, you can run php file as a program (normally a test php file is used here).
+        </p>
+
+        <p> To set this up:
+        </p>
+        <ol>
+            <li>Enable the external tools item for the perspective. Right click the toolbar-Customize
+                Perspective-Command Groups Availability and select the check box for “external tools”. This will add a
+                new icon to the toolbar
+            </li>
+            <li>click the down arrow to the right of the new external tools icon and select External Tools
+                Configurations.
+            </li>
+            <li>Select ‘Program’ from the list on the left</li>
+            <li>Click the ‘add new’ icon above the list on the left</li>
+            <li>In the settings pane that comes up enter the name of the test program</li>
+            <li>Enter the location of your php bin in the ‘Location:’ field</li>
+            <li>Enter the directory locations of the test file in the ‘Working Directory’ field</li>
+            <li>Finally enter the name of the test file in the ‘Arguments’ text box. (ie testall.php)</li>
+            <li>Rejoice when you can run your unit test. (thanks GW)s</li>
+        </ol>
+    </section>
 </article>

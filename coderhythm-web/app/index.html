@@ -1,40 +1,92 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if lt IE 7]>
+<html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!-->
-<html lang="en" ng-app="mostPopularListingsApp" class="no-js"><!--<![endif]-->
+<html lang="en" ng-app="app" class="no-js"><!--<![endif]-->
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>My AngularJS App</title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="resources/css/app.css">
-  <base href="/">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Code Rhythm</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="resources/css/app.css">
+    <base href="/">
 </head>
 <body>
-  <ul class="menu">
-    <li><a href="#/">Home</a></li>
-    <li><a href="#/about">About</a></li>
-    <li><a href="#/login">Login</a></li>
-  </ul>
+<!--[if lt IE 7]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+    your browser</a> to improve your experience.</p>
+<![endif]-->
+<div id="container">
+    <div class="search_bar">
+        <form>
+            <!-- Make the word 'Search' disappear on when user clicks the input box -->
+            <span><input type="text" class="search" value="Search" tabindex="501" onfocus=" this.value = ''; "
+                         onblur="if (this.value == '') { this.value='Search';} "></span>
+        </form>
+    </div>
+    <header>
+        <div class="hgroup">
+            <h1>Code::<span>Rhythm</span></h1>
 
-  <!--[if lt IE 7]>
-      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-  <![endif]-->
+            <h2>thoughts.on( <span>programming</span> )</h2>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Resources</a>
+                    <ul class="sub_menu">
+                        <li><a href="#/video">Video</a></li>
+                        <li><a href="#/books">Books</a></li>
+                    </ul>
+                </li>
+                <li><a href="#/about">About</a></li>
+                <li><a href="#/portfolio">Portfolio</a></li>
+                <li><a href="#/contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div id="main_content">
+        <div ng-view></div>
 
-  <div ng-view></div>
-
-  <!-- In production use:
-  <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
-  -->
-  <script src="resources/bower/angular/angular.js"></script>
-  <script src="resources/bower/angular-route/angular-route.min.js"></script>
-  <script src="app.js"></script>
-  <script src="components/controllers/AboutController.js"></script>
-  <script src="components/controllers/HomeController.js"></script>
-  <script src="components/controllers/LoginController.js"></script>
-
+        <!-- In production use:
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+        -->
+        <script src="resources/bower/angular/angular.js"></script>
+        <script src="resources/bower/angular-route/angular-route.min.js"></script>
+        <script src="app.js"></script>
+        <script src="components/controllers/AboutController.js"></script>
+        <script src="components/controllers/HomeController.js"></script>
+        <script src="components/controllers/PortfolioController.js"></script>
+        <script src="components/controllers/ContactController.js"></script>
+        <script src="components/controllers/VideoController.js"></script>
+        <script src="components/controllers/BooksController.js"></script>
+    </div>
+    <!-- end id="main_content" -->
+    <footer>
+        <div id="secondary_nav">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#/portfolio">Portfolio</a></li>
+                <li><a href="#/contact">Contact</a></li>
+            </ul>
+        </div>
+        <div id="copyright">
+            <p>Copyright &copy;2015 Rhythm Technology</p>
+        </div>
+        <div id="social">
+            <h4>Connect</h4>
+            <ul>
+                <li><a href="https://twitter.com/DoucetteMark" class="twitter">twitter</a></li>
+                <li><a href="http://www.linkedin.com/pub/mark-doucette/9a/186/504" class="linkedin">linkedin</a></li>
+            </ul>
+        </div>
+    </footer>
+</div>
+<!-- end id="container" -->
 </body>
 </html>

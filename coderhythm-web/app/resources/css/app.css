@@ -233,7 +233,7 @@ blockquote {
     border-radius: 15px;
     -moz-border-radius: 15px;
     -webkit-border-radius: 15px;
-    background: url('../images/search.png') no-repeat 8px 6px;
+    background: url('../img/search.png') no-repeat 8px 6px;
     border: 1px solid #2a2e31;
     background-color: #575757;
     color: #ffffff;
@@ -289,15 +289,15 @@ blockquote {
 /* social media links */
 
 .twitter {
-    background: url('../images/social/Twitter.png') no-repeat left bottom;
+    background: url('../img/social/Twitter.png') no-repeat left bottom;
 }
 
 .facebook {
-    background: url('../images/social/Facebook.png') no-repeat left bottom;
+    background: url('../img/social/Facebook.png') no-repeat left bottom;
 }
 
 .linkedin {
-    background: url('../images/social/Linkedin.png') no-repeat left bottom;
+    background: url('../img/social/Linkedin.png') no-repeat left bottom;
 }
 
 /* id's */

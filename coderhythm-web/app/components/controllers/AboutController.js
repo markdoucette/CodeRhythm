@@ -16,5 +16,5 @@ angular.module('app.about', ['ngRoute'])
 
 // Controller definition for this module
     .controller('AboutController', ['$scope', function ($scope) {
-        this.message = "Inside BookController"; // Message for unit test
+        this.message = "Inside AboutController"; // Message for unit test
     }]);

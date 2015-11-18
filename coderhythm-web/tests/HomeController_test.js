@@ -24,7 +24,7 @@ describe('HomeController Tests :', function () {
         }));
 
         it('should have property next defined', inject(function () {
-            expect(controller.message).toEqual("Hello Home!");
+            expect(controller.message).toEqual("Inside HomeController");
         }));
     });
 

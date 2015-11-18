@@ -25,7 +25,7 @@ describe('AboutController Tests :', function () {
         }));
 
         it('should have property next defined', inject(function () {
-            expect(controller.message).toEqual("Hello About!");
+            expect(controller.message).toEqual("Inside AboutController");
 
         }));
     });

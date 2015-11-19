@@ -15,6 +15,11 @@ angular.module('app.home', ['ngRoute'])
     }])
 
 // Controller definition for this module
-    .controller('HomeController', ['$scope', function ($scope) {
+    .controller('HomeController', ['$scope', '$http', function ($scope, $http) {
         this.message = "Inside HomeController"; // Message for unit test
+
+        $http.get("http://localhost:8080/api/articles")
+            .success(function(data) {
+                console.log(data[0].title);
+            });
     }]);

@@ -1,8 +1,7 @@
 package net.coderhythm.articleservice.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.sql.Clob;
 
 /**
  * Created by mdoucette on 11/18/15.
@@ -13,6 +12,8 @@ public class Article {
     @GeneratedValue
     private Long id;
     private String title;
+    @Lob
+    @Column(length = 10000)
     private String content;
 
     public Article() {

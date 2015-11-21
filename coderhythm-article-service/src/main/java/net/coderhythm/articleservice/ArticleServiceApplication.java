@@ -22,7 +22,20 @@ public class ArticleServiceApplication {
     public void init() {
         Article article = new Article();
         article.setTitle("Xampp, set up vhosts in Mac OSX");
-        article.setContent("<h4>Hi from the Article Service!</h4><p><span class=\"italic\">This article won’t cover the setup and securing of a local installation of XAMPP in Mac OS X</span>");
+        article.setContent(
+                "<h4>Hi from the Article Service!</h4><p><span class=\"italic\">This article won’t cover the setup and securing of a local installation of XAMPP in Mac OS X</span>"
+                + "<h4>Hi from the Article Service!</h4><p><span class=\"italic\">This article won’t cover the setup and securing of a local installation of XAMPP in Mac OS X</span>"
+                        + "<h4>Hi from the Article Service!</h4><p><span class=\"italic\">This article won’t cover the setup and securing of a local installation of XAMPP in Mac OS X</span>"
+                        + "<h4>Hi from the Article Service!</h4><p><span class=\"italic\">This article won’t cover the setup and securing of a local installation of XAMPP in Mac OS X</span>"
+                        + "<h4>Hi from the Article Service!</h4><p><span class=\"italic\">This article won’t cover the setup and securing of a local installation of XAMPP in Mac OS X</span>"
+                        + "<h4>Hi from the Article Service!</h4><p><span class=\"italic\">This article won’t cover the setup and securing of a local installation of XAMPP in Mac OS X</span>"
+                        + "<h4>Hi from the Article Service!</h4><p><span class=\"italic\">This article won’t cover the setup and securing of a local installation of XAMPP in Mac OS X</span>"
+                        + "<h4>Hi from the Article Service!</h4><p><span class=\"italic\">This article won’t cover the setup and securing of a local installation of XAMPP in Mac OS X</span>"
+                        + "<h4>Hi from the Article Service!</h4><p><span class=\"italic\">This article won’t cover the setup and securing of a local installation of XAMPP in Mac OS X</span>"
+                        + "<h4>Hi from the Article Service!</h4><p><span class=\"italic\">This article won’t cover the setup and securing of a local installation of XAMPP in Mac OS X</span>"
+                        + "<h4>Hi from the Article Service!</h4><p><span class=\"italic\">This article won’t cover the setup and securing of a local installation of XAMPP in Mac OS X</span>"
+                        + "<h4>Hi from the Article Service!</h4><p><span class=\"italic\">This article won’t cover the setup and securing of a local installation of XAMPP in Mac OS X</span>"
+        );
 
         articleDao.save(article);
     }
